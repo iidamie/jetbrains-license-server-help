@@ -1,0 +1,18 @@
+{
+  // Cloudflare Workers Builds (Git):
+  // - Build command:  npm ci && npm run build
+  // - Deploy command: npx wrangler deploy  (dashboard default is fine)
+  // Dashboard worker name must match this "name" field.
+  "name": "jetbrains-license-server-help",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-12-01",
+  // Do not set "limits"."cpu_ms" here on Workers Free: deploy fails with API error 100328.
+  // After upgrading to Paid, you may add limits.cpu_ms or set CPU time in the dashboard.
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
